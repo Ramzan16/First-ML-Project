@@ -34,6 +34,7 @@ model = Sequential([
     Dense(10)
 ])
 
+# Setting up the forward pass and training the model on the training set
 model.compile(loss=SparseCategoricalCrossentropy(from_logits=True), metrics=['accuracy'])
 model.fit(XTrain, yTrain, epochs=100)
 
