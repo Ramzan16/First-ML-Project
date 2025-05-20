@@ -22,7 +22,7 @@ def convert_to_numpy(dataset):
 XTrain, yTrain = convert_to_numpy(trainData)
 XTest, yTest = convert_to_numpy(testData)
 
-# Builsing the NN layers with 
+# Building the NN layers with 
 model = Sequential([
     Input(shape=(784,)),
     Dense(64, activation = 'relu'),
@@ -31,6 +31,7 @@ model = Sequential([
     Dense(10)
 ])
 
+# Setting up the forward pass and training the model on the training set
 model.compile(loss=SparseCategoricalCrossentropy(from_logits=True), metrics=['accuracy'])
 model.fit(XTrain, yTrain, epochs=100)
 
